@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.hl,
+.hl > * {
+	outline: 1px solid red;
+}
+
+a,
+button {
+	cursor: pointer;
+}
