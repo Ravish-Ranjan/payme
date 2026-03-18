@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PayMe - UPI Payment Links
 
-## Getting Started
+A simple, fast, and secure way to generate and share UPI payment links. Generate dynamic payment pages in seconds and share them with anyone, anywhere.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Lightning Fast** - Generate payment links instantly
+- **Secure & Private** - Your UPI ID and transaction details are always protected
+- 📱 **Works Everywhere** - Compatible with mobile, desktop, and all major UPI apps
+- **Zero Setup** - No registration or configuration required
+- **No Commissions** - Keep 100% of your payments
+- **Easy Sharing** - Copy link or share directly via native sharing
+- **Customizable** - Add names, amounts, and notes to payment links
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tech Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Framework**: [Next.js](https://nextjs.org/) 15+
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Deployment**: Vercel / Any Node.js hosting
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How It Works
 
-## Learn More
+1. User enters their UPI ID and optional details (name, amount, note)
+2. The app generates a payment URL with UPI scheme: `upi://pay?pa=...&pn=...&am=...&tn=...`
+3. User can:
+   - **Copy** the link to clipboard
+   - **Share** using native sharing (mobile)
+   - **Open** to directly initiate payment
+4. When someone clicks the link, their UPI app opens with pre-filled details
+5. Payment can be completed directly in the UPI app
 
-To learn more about Next.js, take a look at the following resources:
+## Security
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- No data is stored on servers - everything is client-side
+- UPI IDs are only used to generate payment links
+- Links are stateless and don't contain sensitive information beyond what's needed for the UPI payment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📱 UPI Parameters
 
-## Deploy on Vercel
+The generated UPI links use these parameters:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `pa` - Payee address (UPI ID)
+- `pn` - Payee name (optional)
+- `am` - Transaction amount in rupees (optional)
+- `tn` - Transaction note/description (optional)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Example: `upi://pay?pa=user@upi&pn=John&am=100&tn=Payment+for+services`
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/improvement`)
+3. Make your changes
+4. Commit your changes (`git commit -am 'Add new feature'`)
+5. Push to the branch (`git push origin feature/improvement`)
+6. Open a Pull Request
+
+## Bug Reports
+
+Found a bug? Please open an issue with:
+- Description of the bug
+- Steps to reproduce
+- Expected behavior
+- Actual behavior
+- Screenshots (if applicable)
+
+## Feature Requests
+
+Have an idea? Open an issue with the `enhancement` label and describe:
+- What problem it solves
+- How it should work
+- Why it's useful
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- Styled with [Tailwind CSS](https://tailwindcss.com/)
+- Icons and emojis for visual appeal
+
+## Support
+
+For support, issues, or questions:
+
+- Open an [issue](https://github.com/Ravish-Ranjan/payme/issues) on GitHub
+- Check existing [discussions](https://github.com/Ravish-Ranjan/payme/discussions)
+
+---
+
+**Made for easy peer-to-peer payments**
