@@ -76,7 +76,7 @@ Have an idea? Open an issue with the `enhancement` label and describe:
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source and available under the [GPLv2 License](LICENSE).
 
 ## Acknowledgments
 
