@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
 	title: "PayMe - Generate UPI Payment Links",
@@ -72,7 +73,9 @@ export default function RootLayout({
 				<meta name="theme-color" content="#ffffff" />
 				<link rel="icon" href="/icons/payme.svg" type="image/svg+xml" />
 			</head>
-			<body className="grid scroll-smooth">{children}</body>
+			<body className="grid scroll-smooth">
+				<Suspense>{children}</Suspense>
+			</body>
 		</html>
 	);
 }

@@ -1,8 +1,10 @@
+"use client";
 import Link from "next/link";
 import Form from "./Form";
 import Info from "./Info";
 import Footer from "./Footer";
 import Hero from "./Hero";
+import { useSearchParams } from "next/navigation";
 
 type PageProps = {
 	searchParams?: Promise<{
@@ -10,7 +12,7 @@ type PageProps = {
 	}>;
 };
 
-function Topbar({ pa }: { pa?: string }) {
+function Topbar({ pa }: { pa: string|null }) {
 	return (
 		<header className="w-full border-b border-slate-300 bg-white/80 backdrop-blur">
 			<div className="mx-auto flex h-14 w-full max-w-4xl items-center justify-between px-4">
@@ -27,9 +29,9 @@ function Topbar({ pa }: { pa?: string }) {
 	);
 }
 
-async function page({ searchParams }: PageProps) {
-	const params = await searchParams;
-	const pa = params?.pa;
+function Page() {
+	const params = useSearchParams();
+	const pa  = params.get("pa");
 	return (
 		<div className="flex flex-col gap-4 w-full min-h-dvh bg-slate-200">
 			<Topbar pa={pa} />
@@ -43,4 +45,4 @@ async function page({ searchParams }: PageProps) {
 	);
 }
 
-export default page;
+export default Page;
